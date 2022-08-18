@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Play Rock Paper Scissors!</title>
+  </head>
+  <body>
+    <script>
+      function getComputerChoice() {
+        var words = ["ROCK", "PAPER", "SCISSORS"];
+        var index = Math.floor(Math.random() * words.length);
+        word = words[index];
+        return word;
+      }
+
+      function singleRound(playerSelection, getComputerChoice) {
+        var caseInsensitiveSelection = playerSelection.toUpperCase();
+        if (
+          caseInsensitiveSelection === "ROCK" &&
+          getComputerChoice === caseInsensitiveSelection
+        ) {
+          return "It's a tie. Try again!";
+        } else if (
+          caseInsensitiveSelection === "ROCK" &&
+          getComputerChoice === "PAPER"
+        ) {
+          return "You lose! Paper beats rock!";
+        } else if (
+          caseInsensitiveSelection === "ROCK" &&
+          getComputerChoice === "SCISSORS"
+        ) {
+          return "You win! Rock beats scissors!";
+        }
+        if (
+          caseInsensitiveSelection === "PAPER" &&
+          getComputerChoice === caseInsensitiveSelection
+        ) {
+          return "It's a tie. Try again!";
+        } else if (
+          caseInsensitiveSelection === "PAPER" &&
+          getComputerChoice === "SCISSORS"
+        ) {
+          return "You lose! Scissors beats paper!";
+        } else if (
+          caseInsensitiveSelection === "PAPER" &&
+          getComputerChoice === "ROCK"
+        ) {
+          return "You win! Paper beats rock!";
+        }
+        if (
+          caseInsensitiveSelection === "SCISSORS" &&
+          getComputerChoice === caseInsensitiveSelection
+        ) {
+          return "It's a tie. Try again!";
+        } else if (
+          caseInsensitiveSelection === "SCISSORS" &&
+          getComputerChoice === "ROCK"
+        ) {
+          return "You lose! Rock beats scissors!";
+        } else if (
+          caseInsensitiveSelection === "SCISSORS" &&
+          getComputerChoice === "PAPER"
+        ) {
+          return "You win! Scissors beats paper!";
+        } else return "ERROR";
+      }
+    </script>
+  </body>
+</html>
